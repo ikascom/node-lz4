@@ -1,7 +1,4 @@
 {
-  "author": {
-    "name": "Pierre Curto"
-  },
   "name": "@ikas/lz4",
   "description": "LZ4 streaming compression and decompression",
   "keywords": [
@@ -10,26 +7,26 @@
     "decompression",
     "stream"
   ],
-  "version": "0.0.5",
-  "homepage": "http://github.com/pierrec/node-lz4",
+  "version": "0.0.6",
+  "homepage": "https://github.com/ikascom/node-lz4",
   "repository": {
     "type": "git",
-    "url": "git://github.com/pierrec/node-lz4.git"
+    "url": "git://github.com/ikascom/node-lz4.git"
   },
   "main": "./lib/lz4.js",
   "browser": "./build/lz4.js",
   "bugs": {
-    "url": "http://github.com/pierrec/node-lz4/issues"
+    "url": "https://github.com/ikascom/node-lz4/issues"
   },
   "gypfile": true,
   "licenses": [
     {
       "type": "MIT",
-      "url": "http://github.com/pierrec/node-lz4/raw/master/LICENSE"
+      "url": "https://github.com/ikascom/node-lz4/raw/master/LICENSE"
     }
   ],
   "engines": {
-    "node": ">= 10.13"
+    "node": ">= 18"
   },
   "dependencies": {
     "buffer": "^6.0.3",
