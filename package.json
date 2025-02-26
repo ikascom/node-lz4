@@ -2,7 +2,7 @@
   "author": {
     "name": "Pierre Curto"
   },
-  "name": "lz4",
+  "name": "@ikas/lz4",
   "description": "LZ4 streaming compression and decompression",
   "keywords": [
     "lz4",
@@ -10,7 +10,7 @@
     "decompression",
     "stream"
   ],
-  "version": "0.6.3",
+  "version": "0.0.5",
   "homepage": "http://github.com/pierrec/node-lz4",
   "repository": {
     "type": "git",
@@ -32,27 +32,21 @@
     "node": ">= 10.13"
   },
   "dependencies": {
-    "buffer": "^5.2.1",
+    "buffer": "^6.0.3",
     "cuint": "^0.2.2",
-    "node-addon-api": "^3.2.1",
+    "node-addon-api": "^8.3.1",
     "xxhashjs": "^0.2.2"
   },
   "devDependencies": {
     "benchmark": "^1.0.0",
     "browserify": "^16.2.3",
-    "jasmine-core": "^2.2.0",
-    "karma": "^0.12.31",
-    "karma-chrome-launcher": "^0.1.7",
-    "karma-cli": "0.0.4",
-    "karma-firefox-launcher": "^0.1.4",
-    "karma-jasmine": "^0.3.5",
-    "karma-mocha": "^0.1.10",
     "minify": "^4.1.1",
-    "mocha": "^2.2.4"
+    "mocha": "^2.2.4",
+    "prebuildify": "^6.0.1"
   },
   "scripts": {
     "test": "mocha",
-    "install": "node-gyp rebuild",
-    "prepublish": "./build.sh"
+    "compile": "node-gyp rebuild",
+    "prebuild": "rm -rf prebuilds && mkdir -p prebuilds/darwin-arm64 && npm run compile && cp -r build/Release/*.node prebuilds/darwin-arm64 && docker buildx build --platform linux/arm64 --output type=local,dest=./prebuilds/linux-arm64 . && docker buildx build --platform linux/amd64 --output type=local,dest=./prebuilds/linux-x64 ."
   }
 }

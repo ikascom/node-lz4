@@ -1,3 +1,14 @@
 .gitignore
 node_modules/
 data/
+build/
+deps/
+test/
+examples/
+.idea/
+Dockerfile
+test.js
+bin/
+.gitmodules
+doc/
+*.md
